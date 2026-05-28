@@ -1,61 +1,61 @@
-# **Análisis de Movilidad Urbana: Taxis en Chicago y el Impacto del Clima**
+# **Urban Mobility Analysis: Taxis in Chicago and the Impact of Weather**
 
-Este proyecto explora los patrones del servicio de taxis en Chicago, utilizando datos de viajes desde el Aeropuerto Internacional O'Hare. El objetivo principal es identificar las empresas líderes, los barrios con mayor demanda y, mediante una prueba de hipótesis, determinar si las condiciones climáticas afectan significativamente la duración de los viajes en una ruta clave.
+This project explores taxi service patterns in Chicago using trip data from O'Hare International Airport. The main objective is to identify leading companies, neighborhoods with the highest demand, and, through a hypothesis test, determine whether weather conditions significantly affect trip duration on a key route.
 
-**Objetivo**
+**Objective**
 
-El proyecto se centra en probar la siguiente hipótesis:
+The project focuses on testing the following hypothesis:
 
-*   **Hipótesis Nula (H0):** La duración promedio de los viajes desde el barrio Loop al Aeropuerto O'Hare **no** varía entre los sábados con lluvia y los sábados con buen tiempo.
-*   **Hipótesis Alternativa (H1):** La duración promedio de los viajes desde el Loop al Aeropuerto O'Hare **sí varía** entre los sábados con lluvia y los sábados con buen tiempo (específicamente, se espera que sea mayor en días lluviosos).
+*   **Null Hypothesis (H0):** The average trip duration from the Loop neighborhood to O'Hare Airport does **not** vary between rainy Saturdays and Saturdays with good weather.
+*   **Alternative Hypothesis (H1):** The average trip duration from the Loop to O'Hare Airport **does** vary between rainy Saturdays and Saturdays with good weather (specifically, it is expected to be longer on rainy days).
 
-**🛠️ Tecnologías Utilizadas**
+**🛠️ Technologies Used**
 
-*   **Python:** Lenguaje principal para el análisis.
-*   **Pandas:** Para la manipulación y limpieza de datos.
-*   **Matplotlib y Seaborn:** Para la visualización de datos y creación de gráficos.
-*   **SciPy:** Para la realización de la prueba de hipótesis estadística (prueba t de Welch).
-*   **Jupyter Notebook:** Entorno interactivo para el desarrollo del análisis.
+*   **Python:** Main language for analysis.
+*   **Pandas:** For data manipulation and cleaning.
+*   **Matplotlib and Seaborn:** For data visualization and chart creation.
+*   **SciPy:** For conducting the statistical hypothesis test (Welch's t-test).
+*   **Jupyter Notebook:** Interactive environment for development of the analysis.
 
-**Pasos Clave**
+**Key Steps**
 
-1.  **Análisis Exploratorio de Datos (EDA):**
-    *   Se evaluó la calidad de los conjuntos de datos, verificando tipos de datos, valores nulos y duplicados.
-    *   Se realizó una limpieza básica para asegurar la integridad de la información.
+1.  **Exploratory Data Analysis (EDA):**
+    *   Dataset quality was evaluated by checking data types, null values, and duplicates.
+    *   Basic cleaning was performed to ensure data integrity.
 
-2.  **Visualización de Patrones de Demanda:**
-    *   Se identificaron y graficaron los 10 barrios con mayor promedio de viajes finalizados, destacando zonas de alta actividad como Loop y River North.
-    *   Se visualizaron las 20 empresas de taxis con mayor número de viajes, revelando una alta concentración del mercado en unas pocas compañías, lideradas por *Flash Cab*.
+2.  **Visualization of Demand Patterns:**
+    *   The 10 neighborhoods with the highest average completed trips were identified and graphed, highlighting high-activity zones like the Loop and River North.
+    *   The 20 taxi companies with the highest number of trips were visualized, revealing high market concentration in a few companies, led by *Flash Cab*.
 
-3.  **Prueba de Hipótesis:**
-    *   Se prepararon los datos meteorológicos, filtrando los viajes realizados los sábados y clasificándolos por condición climática ("Bad" para lluvia, "Good" para buen tiempo).
-    *   Se aplicó una prueba t de Welch para comparar las medias de dos grupos independientes (sábados lluviosos vs. sábados normales), sin asumir varianzas iguales.
-    *   Se visualizó la distribución de la duración de los viajes para ambos grupos mediante gráficos de densidad (KDE).
+3.  **Hypothesis Testing:**
+    *   Weather data was prepared by filtering trips taken on Saturdays and classifying them by weather condition ("Bad" for rain, "Good" for good weather).
+    *   A Welch's t-test was applied to compare the means of two independent groups (rainy Saturdays vs. normal Saturdays) without assuming equal variances.
+    *   The distribution of trip duration for both groups was visualized using density plots (KDE).
 
-**Resultados**
+**Results**
 
-El análisis confirma que:
+The analysis confirms that:
 
-*   **Concentración del Mercado:** Empresas como *Flash Cab* y *Taxi Affiliation Services* dominan el número de viajes, y la mayoría de los viajes terminan en barrios centrales como Loop y River North.
-*   **Impacto del Clima en la Duración de Viajes:** La prueba de hipótesis rechaza la hipótesis nula. Se encontró una diferencia estadísticamente significativa en la duración de los viajes.
-    *   La duración promedio en sábados lluviosos fue de **40.2 minutos**, mientras que en sábados normales fue de **33.9 minutos**.
-*   **Conclusión Estadística:** Con un valor p extremadamente bajo (p < 0.05), se concluye que el mal tiempo (lluvia) aumenta significativamente el tiempo de viaje en la ruta analizada, probablemente debido a una mayor congestión vehicular o condiciones de manejo más lentas.
+*   **Market Concentration:** Companies like *Flash Cab* and *Taxi Affiliation Services* dominate the number of trips, and most trips end in central neighborhoods like the Loop and River North.
+*   **Impact of Weather on Trip Duration:** The hypothesis test rejects the null hypothesis. A statistically significant difference in trip duration was found.
+    *   The average duration on rainy Saturdays was **40.2 minutes**, while on normal Saturdays it was **33.9 minutes**.
+*   **Statistical Conclusion:** With an extremely low p-value (p < 0.05), it is concluded that bad weather (rain) significantly increases travel time on the analyzed route, likely due to increased traffic congestion or slower driving conditions.
 
-**Cómo Ejecutar el Proyecto**
+**How to Run the Project**
 
-1.  Clona este repositorio en tu máquina local.
+1.  Clone this repository to your local machine.
     ```bash
     git clone (https://github.com/ferchi4/Proyecto-spring-8)
     ```
 
-2.  Asegúrate de tener instaladas las dependencias necesarias:
+2.  Ensure you have the necessary dependencies installed:
     ```bash
     pip install pandas numpy matplotlib seaborn scipy jupyter
     ```
 
-3.  Coloca los archivos CSV (`moved_project_sql_result_01.csv`, `moved_project_sql_result_04.csv`, `moved_project_sql_result_07.csv`) en el mismo directorio que el notebook.
+3.  Place the CSV files (`moved_project_sql_result_01.csv`, `moved_project_sql_result_04.csv`, `moved_project_sql_result_07.csv`) in the same directory as the notebook.
 
-4.  Abre y ejecuta el archivo `proyecto8.ipynb` en Jupyter Notebook.
+4.  Open and run the `proyecto8.ipynb` file in Jupyter Notebook.
     ```bash
     jupyter notebook proyecto8.ipynb
     ```
